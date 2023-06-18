@@ -33,11 +33,24 @@
 
 
 import './styles/style.css'
-import {base} from "./data/hbsData"
+import {base, list, frameworks} from "./data/hbsData"
 import marckupbase from "./tamplate/base.hbs"
+import marckupList from "./tamplate/list.hbs"
+import marckupFrameworks from "./tamplate/frameworks.hbs"
 
 const baseEl = marckupbase(base);
 console.log(baseEl);
 
 const rootEl = document.querySelector("#root");
 rootEl.insertAdjacentHTML('beforeend', baseEl);
+
+const listEl = marckupList(list);
+
+rootEl.insertAdjacentHTML('beforeend', listEl);
+
+const frameworksEl = marckupFrameworks(frameworks);
+
+rootEl.insertAdjacentHTML('beforeend', frameworksEl);
+
+
+
